@@ -85,7 +85,7 @@ async def handle_client(reader: asyncio.StreamReader, writer: asyncio.StreamWrit
         if is_ws_upgrade and "sec-websocket-key" in headers:
             accept_key = make_accept_key(headers["sec-websocket-key"])
             response = (
-                "HTTP/1.1 101 Konekk Bangg\r\n"
+                "HTTP/1.1 101 Jibszz Server Connected\r\n"
                 "Upgrade: websocket\r\n"
                 "Connection: Upgrade\r\n"
                 f"Sec-WebSocket-Accept: {accept_key}\r\n"
