@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard SSH Server</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; padding: 20px; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: #333; }
+        .box { background: #222; color: #0f0; padding: 15px; border-radius: 5px; white-space: pre-wrap; font-family: monospace; }
+        .buttons { display: flex; gap: 10px; margin-top: 20px; }
+        button { padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; background: #007bff; color: white; }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>⚡ SSH Server Dashboard ⚡</h2>
+    
+    <h3>Daftar Pengguna Aktif:</h3>
+    <!-- Menampilkan output dari script listssh -->
+    <div class="box">{{ list_users }}</div>
+
+    <div class="buttons">
+        <form action="/action" method="POST">
+            <input type="hidden" name="action" value="add">
+            <button type="submit">➕ Tambah User</button>
+        </form>
+        <form action="/action" method="POST">
+            <input type="hidden" name="action" value="delete">
+            <button type="submit" style="background: #dc3545;">🗑️ Hapus User</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
