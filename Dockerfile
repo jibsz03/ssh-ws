@@ -11,9 +11,6 @@ RUN apt-get update && apt-get install -y \
     curl \
     && rm -rf /var/lib/apt/lists/*
 	
-# Tambahkan ini untuk menginstal Flask secara otomatis
-RUN pip3 install Flask
-
 # Install cloudflared (untuk Argo Tunnel, jalur WS)
 RUN curl -fsSL -o /usr/local/bin/cloudflared \
     https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 \
